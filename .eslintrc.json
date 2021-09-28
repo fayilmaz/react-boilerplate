@@ -19,20 +19,34 @@
     "ecmaVersion": 12,
     "sourceType": "module"
   },
-  "plugins": ["react", "@typescript-eslint", "react-hooks", "jsx-a11y", "prettier", "redux-saga"],
+  "plugins": [
+    "react",
+    "@typescript-eslint",
+    "react-hooks",
+    "jsx-a11y",
+    "prettier",
+    "redux-saga",
+    "unused-imports"
+  ],
   "rules": {
     "no-use-before-define": "off",
-    "@typescript-eslint/no-use-before-define": ["error"],
+    "@typescript-eslint/no-use-before-define": ["warn"],
     "react/jsx-filename-extension": ["warn", { "extensions": [".tsx"] }],
-    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/rules-of-hooks": "off",
     "react-hooks/exhaustive-deps": "warn",
     "import/prefer-default-export": "off",
     "react/prop-types": "off",
     "no-shadow": "off",
-    "indent": ["warn", 2],
+    "spaced-comment": ["warn", "always"],
+    "prefer-destructuring": "off",
+    "indent": ["off", 2],
     "@typescript-eslint/no-shadow": ["error"],
+    "unused-imports/no-unused-vars": [
+      "warn",
+      { "vars": "all", "varsIgnorePattern": "^_", "args": "after-used", "argsIgnorePattern": "^_" }
+    ],
     "@typescript-eslint/explicit-function-return-type": [
-      "error",
+      "off",
       {
         "allowExpressions": true
       }
