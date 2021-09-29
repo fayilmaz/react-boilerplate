@@ -1,15 +1,14 @@
-export type todo = {
-  id: string
-  title: string
-  isCompleted: boolean
-}
-
 export interface storeType {
   lang: langState
-  langInput: string
-  languageLoading: boolean
-  languageLoaded: boolean
-  languageLoadingFail: boolean
+  data: dataStateType
+}
+
+export interface dataStateType {
+  data: null | string | object
+  dataLoading: boolean
+  dataLoadingSuccess: boolean
+  dataLoadingFail: boolean
+  error: null | string
 }
 
 export interface langState {

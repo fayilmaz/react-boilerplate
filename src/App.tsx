@@ -2,14 +2,15 @@ import React, { useEffect } from 'react'
 import { storeType } from 'src/types/storeType'
 import { useSelector } from 'react-redux'
 import { createSelector } from 'reselect'
+import { useTranslation } from 'react-i18next'
+import i18n from 'i18next'
 import { changeLang, getDataSagaAction } from './store/actions'
+import 'src/translations/i18n'
 import './App.css'
 import logo from './logo.svg'
 
 const App: React.FC = () => {
-  useEffect(() => {
-    changeLang()
-  }, [])
+  const { t } = useTranslation()
 
   const getState = (state: storeType) => {
     return state
@@ -18,6 +19,10 @@ const App: React.FC = () => {
     return state.lang.value
   })
   const lang = useSelector(langSelector)
+
+  useEffect(() => {
+    i18n.changeLanguage(lang.toLowerCase())
+  }, [lang])
 
   const handleFakeAPI = () => {
     getDataSagaAction()
@@ -33,7 +38,9 @@ const App: React.FC = () => {
       <header className="bg-gray-800 min-h-screen flex flex-col items-center justify-center text-lg text-white">
         <img src={logo} className="h-80 pointer-events-none rlogospin:spin-fast" alt="logo" />
         <p>
-          Edit <code className="text-linkBlue">src/App.tsx</code> and save to reload.
+          {t('info-1')}
+          <code className="text-linkBlue">src/App.tsx</code>
+          {t('info-2')}
         </p>
         <a
           // className="App-link"
@@ -41,11 +48,13 @@ const App: React.FC = () => {
           href="https://reactjs.org"
           target="_blank"
           rel="noopener noreferrer">
-          Learn React
+          {t('learn')}
         </a>
         <div className="mt-4 justify-center align-center">
           <div className="border-2 max-w-max m-auto rounded-lg ring-white-700 ring-4 mb-2">
-            <p className=" text-center m-2">Language: {lang}</p>
+            <p className=" text-center m-2">
+              {t('langLabel')}: {i18n.language.toUpperCase()}
+            </p>
           </div>
           <button
             className="bg-blue-300 py-2 px-10 m-3 rounded-lg focus:ring-4 hover:text-blue-500 hover:bg-white"
@@ -67,7 +76,7 @@ const App: React.FC = () => {
               type="button"
               value="TR"
               onClick={() => handleFakeAPI()}>
-              Fake API Request With Random Response
+              {t('apiButton')}
             </button>
           </div>
         </div>
