@@ -29,29 +29,44 @@ const App: React.FC = () => {
   }
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+    <div className="text-center">
+      <header className="bg-gray-800 min-h-screen flex flex-col items-center justify-center text-lg text-white">
+        <img src={logo} className="h-80 pointer-events-none rlogospin:spin-fast" alt="logo" />
         <p>
-          Edit <code>src/App.tsx</code> and save to reload.
+          Edit <code className="text-linkBlue">src/App.tsx</code> and save to reload.
         </p>
         <a
-          className="App-link"
+          // className="App-link"
+          className="text-linkBlue"
           href="https://reactjs.org"
           target="_blank"
           rel="noopener noreferrer">
           Learn React
         </a>
-        <div>
-          <h5>Language: {lang}</h5>
-          <button type="button" value="EN" onClick={(e) => handleLanguage(e)}>
+        <div className="mt-4 justify-center align-center">
+          <div className="border-2 max-w-max m-auto rounded-lg ring-white-700 ring-4 mb-2">
+            <p className=" text-center m-2">Language: {lang}</p>
+          </div>
+          <button
+            className="bg-blue-300 py-2 px-10 m-3 rounded-lg focus:ring-4 hover:text-blue-500 hover:bg-white"
+            type="button"
+            value="EN"
+            onClick={(e) => handleLanguage(e)}>
             EN
           </button>
-          <button type="button" value="TR" onClick={(e) => handleLanguage(e)}>
+          <button
+            className="bg-blue-300 py-2 px-10 m-3 rounded-lg focus:ring-4 hover:text-blue-500 hover:bg-white"
+            type="button"
+            value="TR"
+            onClick={(e) => handleLanguage(e)}>
             TR
           </button>
           <div>
-            <button type="button" value="TR" onClick={() => handleFakeAPI()}>
+            <button
+              className="bg-blue-300 py-2 px-10 m-3 rounded-lg hover:bg-red-500 focus:ring-4"
+              type="button"
+              value="TR"
+              onClick={() => handleFakeAPI()}>
               Fake API Request With Random Response
             </button>
           </div>
