@@ -1,7 +1,7 @@
-import { actionsEnum } from 'src/types/actionTypes'
-import { apiReducerInitialState, apiReducerPayloadType } from 'src/types/reducerType'
+import { ActionsEnum } from 'src/shared/store/types/actionTypes'
+import { ApiReducerInitialState, ApiReducerPayloadType } from 'src/shared/store/types/reducerType'
 
-const apiInitialState: apiReducerInitialState = {
+const apiInitialState: ApiReducerInitialState = {
   data: null,
   dataLoading: false,
   dataLoadingSuccess: false,
@@ -9,21 +9,21 @@ const apiInitialState: apiReducerInitialState = {
   error: null,
 }
 
-export const apiReducer = (state = apiInitialState, action: apiReducerPayloadType) => {
+export const apiReducer = (state = apiInitialState, action: ApiReducerPayloadType) => {
   switch (action.type) {
-    case actionsEnum.API_REQ_LOADING:
+    case ActionsEnum.API_REQ_LOADING:
       return {
         ...state,
         dataLoading: true,
       }
-    case actionsEnum.API_REQ_SUCCESS:
+    case ActionsEnum.API_REQ_SUCCESS:
       return {
         ...state,
-        data: { message: action.payload?.data?.message },
+        data: action.payload,
         dataLoading: false,
         dataLoadingSuccess: true,
       }
-    case actionsEnum.API_REQ_FAIL:
+    case ActionsEnum.API_REQ_FAIL:
       return {
         ...state,
         dataLoading: false,

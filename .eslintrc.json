@@ -35,12 +35,16 @@
     "react-hooks/rules-of-hooks": "off",
     "react-hooks/exhaustive-deps": "warn",
     "import/prefer-default-export": "off",
+    "no-return-await": "off",
     "react/prop-types": "off",
+    "dot-notation": "off",
     "no-shadow": "off",
     "spaced-comment": ["warn", "always"],
     "prefer-destructuring": "off",
     "indent": ["off", 2],
     "@typescript-eslint/no-shadow": ["error"],
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/no-explicit-any": "off",
     "unused-imports/no-unused-vars": [
       "warn",
       { "vars": "all", "varsIgnorePattern": "^_", "args": "after-used", "argsIgnorePattern": "^_" }
@@ -51,7 +55,7 @@
         "allowExpressions": true
       }
     ],
-    "max-len": ["warn", { "code": 100 }],
+    "max-len": "off",
     "import/extensions": [
       "error",
       "ignorePackages",

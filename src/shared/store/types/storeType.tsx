@@ -1,9 +1,9 @@
-export interface storeType {
-  lang: langState
-  data: dataStateType
+export interface StoreType {
+  lang: LangStateType
+  data: DataStateType
 }
 
-export interface dataStateType {
+export interface DataStateType {
   data: null | string | object
   dataLoading: boolean
   dataLoadingSuccess: boolean
@@ -11,6 +11,6 @@ export interface dataStateType {
   error: null | string
 }
 
-export interface langState {
+export interface LangStateType {
   value: string
 }

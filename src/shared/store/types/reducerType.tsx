@@ -1,10 +1,10 @@
 import { AnyAction } from 'redux'
 
-export interface langReducerInitialState {
+export interface LangReducerInitialState {
   value: string
 }
 
-export interface apiReducerInitialState {
+export interface ApiReducerInitialState {
   data: null | string | object
   dataLoading: boolean
   dataLoadingSuccess: boolean
@@ -12,14 +12,14 @@ export interface apiReducerInitialState {
   error: null | string
 }
 
-export interface langReducerPayloadType extends AnyAction {
+export interface LangReducerPayloadType extends AnyAction {
   payload?: {
     lang: string
   }
 }
-export interface apiReducerPayloadType extends AnyAction {
+export interface ApiReducerPayloadType extends AnyAction {
   payload?: {
-    data?: { message: boolean | string }
+    data?: object
     error?: string
   }
 }

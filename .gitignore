@@ -43,6 +43,9 @@ jspm_packages/
 package-lock.*
 package-lock.json
 
+# .vscode
+.vscode
+
 # TypeScript v1 declaration files
 typings/
 

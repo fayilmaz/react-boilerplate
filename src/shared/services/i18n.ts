@@ -1,10 +1,7 @@
 import i18n from 'i18next'
 import { initReactI18next } from 'react-i18next'
 import LanguageDetector from 'i18next-browser-languagedetector'
-import { TRANSLATIONS_TR } from './tr/translations'
-import { TRANSLATIONS_EN } from './en/translations'
-import { TRANSLATIONS_DE } from './de/translations'
-import { TRANSLATIONS_FR } from './fr/translations'
+import httpBackend from 'i18next-http-backend'
 
 const options = {
   order: [
@@ -38,25 +35,13 @@ const options = {
 i18n
   .use(LanguageDetector)
   .use(initReactI18next)
+  .use(httpBackend)
   .init({
-    resources: {
-      en: {
-        translation: TRANSLATIONS_EN,
-      },
-      tr: {
-        translation: TRANSLATIONS_TR,
-      },
-      de: {
-        translation: TRANSLATIONS_DE,
-      },
-      fr: {
-        translation: TRANSLATIONS_FR,
-      },
-    },
     fallbackLng: 'en',
     interpolation: {
       escapeValue: false,
     },
+    debug: false,
   })
 
 const languageDetector = new LanguageDetector()
