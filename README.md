@@ -22,9 +22,9 @@ It correctly bundles React in production mode and optimizes the build for the be
 
 ### This project contains:
 
-React
-React Router
-Redux
-Redux Saga
-Tailwind CSS
-i18Next
+React  
+React Router  
+Redux  
+Redux Saga  
+Tailwind CSS  
+i18Next  
