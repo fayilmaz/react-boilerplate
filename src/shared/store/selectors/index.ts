@@ -8,3 +8,7 @@ export const getState = (state: StoreType) => {
 export const langSelector = createSelector(getState, (state) => {
   return state.lang.value
 })
+
+export const itemsSelector = createSelector(getState, (state) => {
+  return state.data.data?.items
+})

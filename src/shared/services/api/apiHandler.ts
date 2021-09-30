@@ -1,10 +1,10 @@
 import { getInterceptor } from '../interceptors/getInterceptor'
 
 export const apiGet = async (url: string) => {
-  const response = getInterceptor(url)
-    .then((res) => res)
+  const result = getInterceptor(url)
     .then((data) => data.json())
-  return response
+    .then((res) => res)
+  return result
 }
 
 export const apiPost = (url: string) => {

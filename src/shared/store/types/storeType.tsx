@@ -4,7 +4,10 @@ export interface StoreType {
 }
 
 export interface DataStateType {
-  data: null | string | object
+  data: {
+    items: Object[]
+    errorMessage: string
+  }
   dataLoading: boolean
   dataLoadingSuccess: boolean
   dataLoadingFail: boolean

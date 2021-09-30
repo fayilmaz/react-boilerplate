@@ -5,11 +5,9 @@ export const unregister = fetchIntercept.register({
     const interceptedConfig = {
       ...config,
       method: 'GET',
-      mode: 'cors',
-      credentials: 'same-origin',
-      cache: 'default',
+      cache: 'no-cache',
     }
-    // console.log("request was made to:",url)
+    // console.log('request was made to:', url)
     // Modify the url or config here
     return [url, interceptedConfig]
   },

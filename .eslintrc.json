@@ -34,6 +34,7 @@
     "react/jsx-filename-extension": ["warn", { "extensions": [".tsx"] }],
     "react-hooks/rules-of-hooks": "off",
     "react-hooks/exhaustive-deps": "warn",
+    "react/no-unused-proptypes": "off",
     "import/prefer-default-export": "off",
     "no-return-await": "off",
     "react/prop-types": "off",
